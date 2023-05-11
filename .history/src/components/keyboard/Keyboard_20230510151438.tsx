@@ -1,0 +1,27 @@
+import React from "react";
+import Key from "../key/Key";
+const Keyboard: React.FC = () => {
+  const listkey: string[] = [
+    "q w e r t y u i o p",
+    "a s d f g h j k l",
+    "z x c v b n m",
+  ];
+  return (
+    <div className="flex flex-col gap-2 pt-8">
+      {listkey.map((item, index) => {
+        {
+          index === 2 && <Key key="Back"></Key>;
+        }
+        return (
+          <div className="flex flex-row gap-2">
+            {item.split(" ").map((letter, index) => (
+              <Key letter={letter.toUpperCase()}></Key>
+            ))}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Keyboard;

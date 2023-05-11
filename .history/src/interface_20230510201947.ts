@@ -1,0 +1,3 @@
+interface Board {
+  board: string[];
+}

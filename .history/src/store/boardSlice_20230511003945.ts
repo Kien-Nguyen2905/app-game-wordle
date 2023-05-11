@@ -1,0 +1,64 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { words } from "../../words.json";
+let randomWord = Math.floor(Math.random() * words.length);
+export const boardSlice = createSlice({
+  name: "board",
+  initialState: {
+    position: 0,
+    row: 0,
+    try: 0,
+    word: words[randomWord].toUpperCase(),
+    board: [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+  },
+  reducers: {
+    setBoard: (state, action) => ({
+      ...state,
+      board: action.payload,
+    }),
+    incTry: (state) => {
+      state.try += 1;
+    },
+    increment: (state) => {
+      state.position++;
+    },
+    decrement: (state) => {
+      state.position--;
+    },
+    incrow: (state) => {
+      state.row++;
+    },
+  },
+});
+export const { setBoard, increment, decrement, incrow } = boardSlice.actions;
+export default boardSlice.reducer;
