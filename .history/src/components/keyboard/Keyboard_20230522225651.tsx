@@ -14,7 +14,7 @@ const Keyboard: React.FC = () => {
           <div className="flex flex-row gap-1" key={uid()}>
             {index === 2 && <Key letter="Back"></Key>}
             {item.split(" ").map((letter) => (
-              <Key key={uid()} letter={letter.toUpperCase()}></Key>
+              <Key letter={letter.toUpperCase()}></Key>
             ))}
           </div>
         );

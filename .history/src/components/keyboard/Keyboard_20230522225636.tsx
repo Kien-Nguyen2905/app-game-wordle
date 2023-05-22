@@ -12,7 +12,7 @@ const Keyboard: React.FC = () => {
       {listkey.map((item, index) => {
         return (
           <div className="flex flex-row gap-1" key={uid()}>
-            {index === 2 && <Key letter="Back"></Key>}
+            {index === 2 && <Key key={uid()} letter="Back"></Key>}
             {item.split(" ").map((letter) => (
               <Key key={uid()} letter={letter.toUpperCase()}></Key>
             ))}
