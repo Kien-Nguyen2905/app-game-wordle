@@ -8,7 +8,7 @@ const Board: React.FC<IBoard> = (props) => {
   const { board } = props;
   return (
     <>
-      <div className="grid grid-cols-5 gap-2 mt-3 ">
+      <div className="mt-3 grid grid-cols-5 gap-2 ">
         {board.map((square, index) => {
           return <Square value={square} index={index} key={index}></Square>;
         })}

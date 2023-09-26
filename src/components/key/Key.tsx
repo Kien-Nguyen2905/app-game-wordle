@@ -43,7 +43,7 @@ const Key: React.FC<IKey> = ({ letter = "" }) => {
         position: toast.POSITION.TOP_CENTER,
       });
     } else {
-      if (position % 5 === 0 && position !== 0 && (position - 1) / 5 > row) {
+      if (position % 5 === 0 && position !== 0) {
         dispatch(incrow());
       }
     }
